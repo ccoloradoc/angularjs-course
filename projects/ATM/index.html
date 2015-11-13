@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12" ng-controller="MainController">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">ATM</div>
+					  <div class="panel-body">
+					  	<div class="form-group">
+					  		<label for="saldo">Saldo:</label>
+					  		<input id="saldo" type="text" class="form-control" ng-model="usuario.saldo" disabled>
+					  	</div>
+					  	<div class="form-group">
+					  		<label for="retiro">Monto:</label>
+					  		<div class="input-group">
+					  			<span class="input-group-addon" ng-click="atm.retiro = atm.retiro - atm.billeteMenor">-</span>
+					  			<input type="text" class="form-control" ng-model="atm.retiro">
+					  			<span class="input-group-addon" ng-click="atm.retiro = atm.retiro + atm.billeteMenor">+</span>
+					  		</div>
+					  		<div class="alert alert-danger" ng-if="atm.excedeLimite">
+					  			No puedes realizar retiros mayores a <span ng-bind="usuario.retiroLimite | currency"></span>
+					  		</div>
+					  	</div>
+
+					  	<input type="button" value="Retirar" class="form-control btn btn-primary" ng-click="ejecutaRetiro()">
+
+					  </div>
+					</div> <!-- End Panel -->
+
+				</div> 
+			</div>
+		</div>
+
+	</body>
+</html>
