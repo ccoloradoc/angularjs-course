@@ -1,0 +1,23 @@
+body {
+	margin-top: 70px;
+}
+.navbar-brand img {
+	display: inline-block;
+	height: 135%;
+}
+
+.odd {
+	background-color: #E7E7E7;
+}
+
+.even {
+	background-color: #F8F8F8;
+}
+
+.first, .last {
+	color: blue;
+}
+
+.middle { 
+	color: red;
+}

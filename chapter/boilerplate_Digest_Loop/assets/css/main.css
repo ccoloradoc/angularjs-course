@@ -1,0 +1,11 @@
+body {
+	margin-top: 70px;
+}
+.navbar-brand img {
+	display: inline-block;
+	height: 135%;
+}
+
+.alert {
+	margin-top: 10px;
+}

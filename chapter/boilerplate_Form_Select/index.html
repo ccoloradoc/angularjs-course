@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container" ng-controller="MainController">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Select</h3>
+					<hr>
+					<form>
+						<table class="table table-striped">
+							<thead>
+								<th>Type</th>
+								<th>Control</th>
+								<th>Value</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>NG-MODEL</td>
+									<td>
+										<select ng-model="basicSelectValue">
+											<option value="Samsung">Samsung</option>
+											<option value="Apple">Apple</option>
+											<option value="Motorola">Motorola</option>
+										</select>
+									</td>
+									<td ng-bind="basicSelectValue"></td>
+								</tr>
+								<tr>
+									<td>NG-OPTIONS(Simple)</td>
+									<td>
+										<select ng-model="optionsSelectValue" ng-options="brand for brand in brands">
+											<option value="">NONE</option>
+										</select>
+									</td>
+									<td ng-bind="optionsSelectValue"></td>
+								</tr>
+								<tr>
+									<td>NG-OPTIONS(Object)</td>
+									<td>
+										<select ng-model="objectSelectValue" ng-options="device.name for device in devices">
+											<option value="">NONE</option>
+										</select>
+									</td>
+									<td ng-bind="objectSelectValue | json"></td>
+								</tr>
+								<tr>
+									<td>NG-OPTIONS(Function)</td>
+									<td>
+										<select ng-model="fncSelectValue" ng-options="getDeviceDetails(device)  for device in devices">
+											<option value="">NONE</option>
+										</select>
+									</td>
+									<td ng-bind="fncSelectValue | json"></td>
+								</tr>
+								<tr>
+									<td>NG-OPTIONS(Alias)</td>
+									<td>
+										<select ng-model="aliasSelectValue" ng-options="device.name as getDeviceDetails(device)  for device in devices">
+											<option value="">NONE</option>
+										</select>
+									</td>
+									<td ng-bind="aliasSelectValue"></td>
+								</tr>
+								<tr>
+									<td>NG-OPTIONS(Group by)</td>
+									<td>
+										<select ng-model="groupBySelectValue" ng-options="device.name group by device.brand  for device in devices">
+											<option value="">NONE</option>
+										</select>
+									</td>
+									<td ng-bind="groupBySelectValue | json"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

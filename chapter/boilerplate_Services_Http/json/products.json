@@ -1,0 +1,27 @@
+[
+    {
+        "name": "IpadMini",
+        "brand": "Apple",
+        "price": "239"
+    },
+    {
+        "name": "AppleWatch",
+        "brand": "Apple",
+        "price": "200"
+    },
+    {
+        "name": "iPod",
+        "brand": "Apple",
+        "price": "150"
+    },
+    {
+        "name": "MacBookAir11inch",
+        "brand": "Apple",
+        "price": "899"
+    },
+    {
+        "name": "MacBookAir13inch",
+        "brand": "Apple",
+        "price": "999"
+    }
+]

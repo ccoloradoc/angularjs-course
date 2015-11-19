@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app>
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Text Input</h3>
+					<hr>
+					<form>
+						<table class="table table-striped">
+							<thead>
+								<th>Type</th>
+								<th>Control</th>
+								<th>Value</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Text</td>
+									<td><input type="text" class="form-control" ng-model="textValue" required></td>
+									<td ng-bind="textValue"></td>
+								</tr>
+								<tr>
+									<td>Number</td>
+									<td><input type="number" class="form-control" ng-model="numberValue" required></td>
+									<td ng-bind="numberValue"></td>
+								</tr>
+								<tr>
+									<td>Password</td>
+									<td><input type="password" class="form-control" ng-model="passwordValue" required></td>
+									<td ng-bind="passwordValue"></td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td><input type="email" class="form-control" ng-model="emailValue" required></td>
+									<td ng-bind="emailValue"></td>
+								</tr>
+								<tr>
+									<td>URL</td>
+									<td><input type="url" class="form-control" ng-model="urlValue" required></td>
+									<td ng-bind="urlValue"></td>
+								</tr>
+								<tr>
+									<td>TextArea</td>
+									<td><textarea class="form-control" ng-model="textAreaValue" required></textarea></td>
+									<td ng-bind="textAreaValue"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

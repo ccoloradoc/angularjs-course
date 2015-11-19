@@ -1,0 +1,28 @@
+body {
+	margin-top: 70px;
+}
+.navbar-brand img {
+	display: inline-block;
+	height: 135%;
+}
+
+input.ng-dirty.ng-invalid {
+	border: 1px solid red;
+}
+
+input.ng-dirty.ng-valid {
+	border: 1px solid green;
+}
+
+.alert-content {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.alert-label {
+	width: 20%;
+}
+
+.alert-value {
+	width: 80%;
+}

@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/bower_components/angular-messages/angular-messages.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container" ng-controller="MainController">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>$log service</h3>
+					<div class="form-group">
+						<label>Message: </label>
+						<input type="text" class="form-control" ng-model="message">
+					</div>
+					<div class="form-group">
+						<input type="button" ng-click="$log.log(message)" value="Log" class="btn btn-primary">
+						<input type="button" ng-click="$log.info(message)" value="Info" class="btn btn-info">
+						<input type="button" ng-click="$log.warn(message)" value="Warn" class="btn btn-warning">
+						<input type="button" ng-click="$log.error(message)" value="Error" class="btn btn-danger">
+						<input type="button" ng-click="$log.debug(message)" value="Debug" class="btn btn-success">
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/bower_components/angular-messages/angular-messages.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container" ng-controller="MainController">
+			<div class="row">
+				<div class="col-xs-12">
+					<h4>Form Validation</h4>
+					<hr>
+				</div>
+				<div class="col-xs-12">
+					<form name="form">
+						<div class="form-group col-xs-6">
+							<label for="name">Name:</label>
+							<input id="name" name="name" type="text" class="form-control input-sm" 
+								ng-model="user.name" ng-minlength="10" ng-maxlength="15" required>
+						</div>
+						<div class="form-group col-xs-6">
+							<label for="email">Email:</label>
+							<input id="email" name="email" type="email" class="form-control input-sm" 
+								ng-model="user.email" required>
+						</div>
+						<div class="form-group col-xs-6">
+							<label for="site">Site:</label>
+							<input id="site" name="site" type="url" class="form-control input-sm" ng-model="user.site" 
+								required>
+						</div>
+						<div class="form-group col-xs-6">
+							<label for="password">Password</label>
+							<input id="password" name="password" type="password" class="form-control input-sm" 
+								ng-model="user.password" 
+								pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" 
+								required>
+						</div>
+						<div class="col-xs-12">
+							<div class="alert alert-warning" ng-show="form.$dirty && form.$invalid">
+								<ul ng-if="form.name.$dirty" ng-messages="form.name.$error" role="alert">	
+									<li ng-message="required">{{form.name.$name}} field is required.</li>
+									<li ng-message="minlength">The min length is 10. Your length is {{form.name.$viewValue.length}}.</li>
+									<li ng-message="maxlength">The max length is 15. Your length is {{form.name.$viewValue.length}}.</li>
+								</ul> <!-- ul form.name-->
+								<ul ng-if="form.email.$dirty" ng-messages="form.email.$error" role="alert">	
+									<li ng-message="required">{{form.email.$name}} field is required.</li>
+									<li ng-message="email">Sintaxis of your email is wrong.</li>
+								</ul> <!-- ul form.email-->
+								<ul ng-if="form.site.$dirty" ng-messages="form.site.$error" role="alert">	
+									<li ng-message="required">{{form.site.$name}} field is required.</li>
+									<li ng-message="url">The URL is incorrect.</li>
+								</ul> <!-- ul form.site-->
+								<ul ng-if="form.password.$dirty" ng-messages="form.password.$error" role="alert">	
+									<li ng-message="required">{{form.password.$name}} field is required.</li>
+									<li ng-message="pattern"> Your password must follow below rules:
+										<ul>
+											<li>must contains one digit from 0-9</li>
+											<li>must contains one uppercase characters</li>
+											<li>must contains one lowercase characters</li>
+											<li>must contains one special symbols in the list [@#$%]</li>
+											<li>length at least 6 characters and maximum of 20</li>
+										</ul>
+									</li>
+								</ul> <!-- ul form.password-->
+							</div>
+						</div>
+					</form>
+					<hr>
+				</div> <!-- end div col-xs-12 -->
+				<div class="col-xs-12">
+					<h4>NgFormController ft. NgModelController</h4>
+					<hr>
+				</div>
+				<div class="col-xs-12">
+					<table class="table table-striped">
+						<thead>
+							<th>Field</th>
+							<th>Model</th>
+							<th>View</th>
+							<th>P/D</th>
+							<th>V/I</th>
+							<th>T/U</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td ng-bind="form.name.$name"></td>
+								<td ng-bind="form.name.$modelValue"></td>
+								<td ng-bind="form.name.$viewValue"></td>
+								<td>
+									<span ng-if="form.name.$pristine">Pristine</span>
+									<span ng-if="form.name.$dirty">Dirty</span>
+								</td>
+								<td>
+									<span ng-if="form.name.$valid">Valid</span>
+									<span ng-if="form.name.$invalid">Invalid</span>
+								</td>
+								<td>
+									<span ng-if="form.name.$touched">Touched</span>
+									<span ng-if="form.name.$untouched">Untouched</span>
+								</td>
+							</tr>
+							<tr>
+								<td ng-bind="form.email.$name"></td>
+								<td ng-bind="form.email.$modelValue"></td>
+								<td ng-bind="form.email.$viewValue"></td>
+								<td>
+									<span ng-if="form.email.$pristine">Pristine</span>
+									<span ng-if="form.email.$dirty">Dirty</span>
+								</td>
+								<td>
+									<span ng-if="form.email.$valid">Valid</span>
+									<span ng-if="form.email.$invalid">Invalid</span>
+								</td>
+								<td>
+									<span ng-if="form.email.$touched">Touched</span>
+									<span ng-if="form.email.$untouched">Untouched</span>
+								</td>
+							</tr>
+							<tr>
+								<td ng-bind="form.site.$name"></td>
+								<td ng-bind="form.site.$modelValue"></td>
+								<td ng-bind="form.site.$viewValue"></td>
+								<td>
+									<span ng-if="form.site.$pristine">Pristine</span>
+									<span ng-if="form.site.$dirty">Dirty</span>
+								</td>
+								<td>
+									<span ng-if="form.site.$valid">Valid</span>
+									<span ng-if="form.site.$invalid">Invalid</span>
+								</td>
+								<td>
+									<span ng-if="form.site.$touched">Touched</span>
+									<span ng-if="form.site.$untouched">Untouched</span>
+								</td>
+							</tr>
+							<tr>
+								<td ng-bind="form.password.$name"></td>
+								<td ng-bind="form.password.$modelValue"></td>
+								<td ng-bind="form.password.$viewValue"></td>
+								<td>
+									<span ng-if="form.password.$pristine">Pristine</span>
+									<span ng-if="form.password.$dirty">Dirty</span>
+								</td>
+								<td>
+									<span ng-if="form.password.$valid">Valid</span>
+									<span ng-if="form.password.$invalid">Invalid</span>
+								</td>
+								<td>
+									<span ng-if="form.password.$touched">Touched</span>
+									<span ng-if="form.password.$untouched">Untouched</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- end div col-xs-12 -->
+				<div class="col-xs-12">
+					<input type="button" class="btn btn-primary form-control input-sm" ng-click="printScope()" value="Print">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

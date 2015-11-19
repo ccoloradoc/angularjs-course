@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>AngularJS</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app>
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Checkbox and radiobutton</h3>
+					<hr>
+					<form>
+						<table class="table table-striped">
+							<thead>
+								<th>Type</th>
+								<th>Control</th>
+								<th>Value</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Checkbox</td>
+									<td><input type="checkbox" ng-model="checkboxValue"></td>
+									<td ng-bind="checkboxValue"></td>
+								</tr>
+								<tr>
+									<td>Checkbox(Custom)</td>
+									<td><input type="checkbox" ng-model="customValue" ng-true-value="'verdadero'" ng-false-value="'falso'"></td>
+									<td ng-bind="customValue"></td>
+								</tr>
+								<tr>
+									<td>Radio</td>
+									<td>
+										<label>A: </label><input type="radio" ng-model="radioValue" value="A"></label><br>
+										<label>B: </label><input type="radio" ng-model="radioValue" value="B"></label><br>
+										<label>C: </label><input type="radio" ng-model="radioValue" value="C"></label>
+									</td>
+									<td ng-bind="radioValue"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
