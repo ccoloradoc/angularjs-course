@@ -1,0 +1,70 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json node-api@ No description
+6 warn package.json node-api@ No repository field.
+7 warn package.json node-api@ No README data
+8 verbose readDependencies using package.json deps
+9 verbose install where, deps [ 'C:\\Users\\CristianEduardo\\Documents\\Development\\Udemy\\test\\store',
+9 verbose install   [ 'express', 'mongoose', 'body-parser', 'serve-static', 'spidydb' ] ]
+10 info preinstall node-api@
+11 verbose readDependencies using package.json deps
+12 verbose already installed skipping express@~4.0.0 C:\Users\CristianEduardo\Documents\Development\Udemy\test\store
+13 verbose already installed skipping mongoose@~3.6.13 C:\Users\CristianEduardo\Documents\Development\Udemy\test\store
+14 verbose already installed skipping body-parser@~1.0.1 C:\Users\CristianEduardo\Documents\Development\Udemy\test\store
+15 verbose already installed skipping serve-static@~1.10.0 C:\Users\CristianEduardo\Documents\Development\Udemy\test\store
+16 verbose cache add [ 'spidydb@git+https://github.com/ccoloradoc/spidydb.git',
+16 verbose cache add   null ]
+17 verbose cache add name=undefined spec="spidydb@git+https://github.com/ccoloradoc/spidydb.git" args=["spidydb@git+https://github.com/ccoloradoc/spidydb.git",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'spidydb@git+https://github.com/ccoloradoc/spidydb.git',
+18 verbose parsed url   path: 'spidydb@git+https://github.com/ccoloradoc/spidydb.git',
+18 verbose parsed url   href: 'spidydb@git+https://github.com/ccoloradoc/spidydb.git' }
+19 verbose cache add name="spidydb" spec="git+https://github.com/ccoloradoc/spidydb.git" args=["spidydb","git+https://github.com/ccoloradoc/spidydb.git"]
+20 verbose parsed url { protocol: 'git+https:',
+20 verbose parsed url   slashes: true,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: 'github.com',
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: 'github.com',
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: '/ccoloradoc/spidydb.git',
+20 verbose parsed url   path: '/ccoloradoc/spidydb.git',
+20 verbose parsed url   href: 'git+https://github.com/ccoloradoc/spidydb.git' }
+21 silly lockFile b40aa16c-ithub-com-ccoloradoc-spidydb-git https://github.com/ccoloradoc/spidydb.git
+22 verbose lock https://github.com/ccoloradoc/spidydb.git C:\Users\CristianEduardo\AppData\Roaming\npm-cache\b40aa16c-ithub-com-ccoloradoc-spidydb-git.lock
+23 verbose addRemoteGit [ 'https://github.com/ccoloradoc/spidydb.git', 'master' ]
+24 verbose git remote.origin.url https://github.com/ccoloradoc/spidydb.git
+25 error git fetch -a origin (https://github.com/ccoloradoc/spidydb.git) fatal: unable to access 'https://github.com/ccoloradoc/spidydb.git/': Failed connect to github.com:443; No error
+26 silly lockFile b40aa16c-ithub-com-ccoloradoc-spidydb-git https://github.com/ccoloradoc/spidydb.git
+27 silly lockFile b40aa16c-ithub-com-ccoloradoc-spidydb-git https://github.com/ccoloradoc/spidydb.git
+28 error Error: Command failed: fatal: unable to access 'https://github.com/ccoloradoc/spidydb.git/': Failed connect to github.com:443; No error
+28 error
+28 error     at ChildProcess.exithandler (child_process.js:648:15)
+28 error     at ChildProcess.emit (events.js:98:17)
+28 error     at maybeClose (child_process.js:756:16)
+28 error     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+29 error If you need help, you may report this *entire* log,
+29 error including the npm and node versions, at:
+29 error     <http://github.com/npm/npm/issues>
+30 error System Windows_NT 6.2.9200
+31 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+32 error cwd C:\Users\CristianEduardo\Documents\Development\Udemy\test\store
+33 error node -v v0.10.33
+34 error npm -v 1.4.28
+35 error code 128
+36 verbose exit [ 1, true ]

@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>TODO List</title>
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/main.css"></style>
+		
+		<script type="text/javascript" src="assets/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="assets/bower_components/angular-messages/angular-messages.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<nav class="navbar navbar-default navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="assets/img/icon.png"/> &nbsp;AngujarJS - To Do</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="#">Home</a></li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div>
+	    </nav>
+		<div class="container" ng-controller="MainController">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					  	TO-DO List
+					  </div>
+					  <div class="panel-body">
+					  	<div class="col-xs-12">
+						  	<form class="form-inline">
+						  		<div class="form-group col-xs-8">
+									<label class="control-label col-xs-2">Search: </label>
+									<div class="col-xs-10">
+										<input type="search" class="col-xs-12" ng-model="search">
+									</div>
+								</div>
+								<div class="form-group col-xs-4">
+									<label class="control-label col-xs-8">Hide Done:</label>
+									<div class="col-xs-4">
+										<input type="checkbox" ng-model="hideDone">
+									</div>
+								</div>
+							</form>
+						</div>
+					    <table class="table table-striped">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Actividad</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in list | filter:search" 
+									ng-hide="item.done && hideDone"
+									ng-class="{odd: $odd, even: $even}">
+									<td>
+										<input id="done" type="checkbox" ng-model="item.done" ng-click="done(item)">
+									</td>
+									<td>
+										<form class="form-inline" ng-submit="editActivity(item)">
+											<span class="item-name" ng-bind="item.name" ng-hide="edit[item.id]"></span>
+											
+											<input type="text" class="form-control item-name" ng-model="item.name" ng-show="edit[item.id]">
+											<div class="item-nav">
+												<button type="button" class="btn btn-primary btn-sm" ng-click="edit[item.id] = true" ng-hide="edit[item.id]">
+													<i class="glyphicon glyphicon-pencil"></i>
+												</button>
+												<button type="submit" class="btn btn-primary btn-sm" ng-show="edit[item.id]"> 
+													<i class="glyphicon glyphicon-pencil"></i>
+												</button>
+												<button class="btn btn-danger btn-sm" ng-click="deleteActivity(item)">
+													<i class="glyphicon glyphicon-trash"></i>
+												</button>
+											</div>
+										</form>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>
+										<form ng-submit="addActivity()" >
+											<input id="name" type="text"  class="form-control" ng-model="activity.name" placeholder="Add New Activity">
+										</form>
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					  </div>
+					</div> <!-- End Panel -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
